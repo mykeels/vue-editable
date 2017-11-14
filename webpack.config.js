@@ -3,8 +3,8 @@ var path = require('path');
 
 
 // Naming and path settings
-var appName = 'app';
-var entryPoint = './src/main.js';
+var appName = 'vue-editable';
+var entryPoint = './src/index.js';
 var exportPath = path.resolve(__dirname, './build');
 
 // Enviroment flag

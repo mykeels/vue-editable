@@ -4,6 +4,8 @@
   "description": "A collection of editable vue components",
   "main": "index.js",
   "scripts": {
+    "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
+    "build": "WEBPACK_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,13 +23,19 @@
   },
   "homepage": "https://github.com/mykeels/vue-editable#readme",
   "dependencies": {
+    "moment": "^2.19.2",
     "vue": "^2.5.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.7",
     "uglifyjs-webpack-plugin": "^1.0.1",
+    "vue-hot-reload-api": "^2.2.3",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^13.5.0",
+    "vue-template-compiler": "^2.5.3",
     "webpack": "^3.8.1"
   }
 }
