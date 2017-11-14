@@ -25,7 +25,21 @@
 
     export default {
         name: 'TimeEditable',
-        props: ['value', 'is-edit', 'class-name', 'on-change'],
+        props: {
+            value: {
+                type: String,
+                required: true
+            },
+            'is-edit': {
+                type: Boolean
+            },
+            'class-name': {
+                type: String
+            },
+            'on-change': {
+                type: Function
+            }
+        },
         data(){
             return {
                 text: this.value,
