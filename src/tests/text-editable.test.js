@@ -51,4 +51,32 @@ describe('TextEditable', () => {
         expect(vm.$el.querySelectorAll('textarea').length).toEqual(1)
         expect(vm.$el.querySelectorAll('input[type="text"]').length).toEqual(0)
     })
+    
+    it ('onChange is triggered', () => {
+        /**
+         * will change the text in the input to "hello world"
+         * if onChange is triggered, the value of [onChangeHasTriggered] should change to true
+         */
+        let onChangeHasTriggered = false
+
+        const vm = CreateTextEditor({
+            value: 'hello',
+            isEdit: true,
+            onChange: (text) => {
+                onChangeHasTriggered = true
+            }
+        })
+
+        const $input = vm.$el.querySelector('input');
+        $input.value = 'hello world';
+        $input.dispatchEvent(new Event('input'))
+
+        const $form = vm.$el.querySelector('form');
+        $form.dispatchEvent(new Event('submit'));
+        
+        Vue.nextTick(() => {
+            expect(onChangeHasTriggered).toBe(true)
+            done()
+        })
+    })
 })
