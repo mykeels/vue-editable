@@ -67,12 +67,12 @@ describe('TextEditable', () => {
             }
         })
 
-        const $input = vm.$el.querySelector('input');
-        $input.value = 'hello world';
+        const $input = vm.$el.querySelector('input')
+        $input.value = 'hello world'
         $input.dispatchEvent(new Event('input'))
 
-        const $form = vm.$el.querySelector('form');
-        $form.dispatchEvent(new Event('submit'));
+        const $form = vm.$el.querySelector('form')
+        $form.dispatchEvent(new Event('submit'))
         
         Vue.nextTick(() => {
             expect(onChangeHasTriggered).toBe(true)
