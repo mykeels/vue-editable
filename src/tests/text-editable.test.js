@@ -1,25 +1,16 @@
 import Vue from 'vue'
-import { mount } from 'vue-test-utils'
-import TextEditable from '../comps/text-editable'
+import { CreateTextEditable } from './helpers/create-comp'
 
 describe('TextEditable', () => {
-
-    const CreateTextEditor = (props) => {
-        const Ctor = Vue.extend(TextEditable)
-        return new Ctor({
-            propsData: props
-        }).$mount()
-    }
-
     it ('isEditMode is true', () => {
-        const vm = CreateTextEditor({
+        const vm = CreateTextEditable({
             isEdit: true
         })
         expect(vm.isEditMode).toBe(true)
     })
 
     it ('isEditMode is false', () => {
-        const vm = CreateTextEditor({
+        const vm = CreateTextEditable({
             isEdit: false
         })
 
@@ -27,7 +18,7 @@ describe('TextEditable', () => {
     })
     
     it ('element class-name is set', () => {
-        const vm = CreateTextEditor({
+        const vm = CreateTextEditable({
             className: 'my-class-name'
         })
 
@@ -35,7 +26,7 @@ describe('TextEditable', () => {
     })
     
     it ('has a form in edit-mode', () => {
-        const vm = CreateTextEditor({
+        const vm = CreateTextEditable({
             isEdit: true
         })
 
@@ -43,7 +34,7 @@ describe('TextEditable', () => {
     })
     
     it ('multi mode uses a textarea', () => {
-        const vm = CreateTextEditor({
+        const vm = CreateTextEditable({
             isEdit: true,
             multi: true
         })
@@ -59,7 +50,7 @@ describe('TextEditable', () => {
          */
         let onChangeHasTriggered = false
 
-        const vm = CreateTextEditor({
+        const vm = CreateTextEditable({
             value: 'hello',
             isEdit: true,
             onChange: (text) => {
