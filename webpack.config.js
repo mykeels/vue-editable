@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var path = require('path');
-var ghPages = require('gh-pages')
 
 
 // Naming and path settings
@@ -25,11 +24,6 @@ if (env === 'production') {
   ));
 
   appName = appName + '.min.js';
-}
-else if (env === 'gh-pages') {
-  ghPages.publish('examples', (err) => {
-    console.error(err)
-  })
 }
 else {
   appName = appName + '.js';

@@ -7,7 +7,7 @@
     "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
     "prod": "WEBPACK_ENV=production webpack",
     "test": "jest --verbose --watch",
-    "gh-pages": "WEBPACK_ENV=gh-pages webpack --progress --colors"
+    "deploy": "gh-pages -d examples"
   },
   "jest": {
     "verbose": true,
