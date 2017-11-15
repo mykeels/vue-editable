@@ -29,7 +29,16 @@
     
     export default {
         name: 'SelectEditable',
-        props: ['value', 'values', 'is-edit', 'class-name', 'on-change'],
+        props: {
+            value: String | Number,
+            values: {
+                type: Array,
+                required: true
+            },
+            'is-edit': Boolean,
+            'class-name': String,
+            'on-change': Function
+        },
         data(){
             return {
                 text: this.value || (this.values || [])[0] || '',
@@ -43,6 +52,11 @@
                 if (!this.isEditMode && typeof(this.onChange) === 'function') {
                     this.onChange(this.text)
                 }
+            }
+        },
+        mounted() {
+            if (!this.values || !Array.isArray(this.values)) {
+                throw new Error('[values] prop should be a valid Array')
             }
         }
     }

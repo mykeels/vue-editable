@@ -45,7 +45,7 @@ describe('DateEditable', () => {
     
     it ('onChange is triggered', () => {
         /**
-         * will change the time in the input to "3:30"
+         * will change the date in the input to "2017-01-02"
          * if onChange is triggered, the value of [onChangeHasTriggered] should change to true
          */
         let onChangeHasTriggered = false

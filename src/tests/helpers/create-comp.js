@@ -5,10 +5,14 @@ import DateEditable from '../../comps/date-editable'
 import SelectEditable from '../../comps/select-editable'
 
 const CreateEditable = (comp, props) => {
+    return CreateUnmountedEditable(comp, props).$mount()
+}
+
+const CreateUnmountedEditable = (comp, props) => {
     const Ctor = Vue.extend(comp)
     return new Ctor({
         propsData: props
-    }).$mount()
+    })
 }
 
 export const CreateTextEditable = (props) => CreateEditable(TextEditable, props)
@@ -17,9 +21,5 @@ export const CreateDateEditable = (props) => CreateEditable(DateEditable, props)
 export const CreateSelectEditable = (props) => CreateEditable(SelectEditable, props)
 
 
-export const CreateUnmountedDateEditable = (props) => ((comp, props) => {
-    const Ctor = Vue.extend(comp)
-    return new Ctor({
-        propsData: props
-    })
-})(DateEditable, props)
+export const CreateUnmountedDateEditable = (props) => CreateUnmountedEditable(DateEditable, props)
+export const CreateUnmountedSelectEditable = (props) => CreateUnmountedEditable(SelectEditable, props)
