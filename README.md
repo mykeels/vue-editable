@@ -1,6 +1,10 @@
 # Vue Editable
 
-A collection of editable Vue components such as:
+This is a collection of editable Vue components.
+
+The components are "Editable" because you can double-click them and get an input field to edit its content.
+
+Available editable components are:
 
 ## Text Editable
 
@@ -80,3 +84,29 @@ A collection of editable Vue components such as:
 | on-change  | Function | No       |  |
 
 
+# How to use
+
+You could use via the `<script>` tag:
+
+```html
+<script src="https://raw.githubusercontent.com/mykeels/vue-editable/master/build/vue-editable.min.js"></script>
+```
+
+Be sure to register the components in your Vue Instance
+
+```html
+<script>
+    new Vue({
+            el: '#app',
+            data: {
+                
+            },
+            components: {
+                'text-editable': VueEditable.TextEditable,
+                'date-editable': VueEditable.DateEditable,
+                'select-editable': VueEditable.SelectEditable,
+                'time-editable': VueEditable.TimeEditable
+            }
+        })
+</script>
+```
