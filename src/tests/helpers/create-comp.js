@@ -15,3 +15,11 @@ export const CreateTextEditable = (props) => CreateEditable(TextEditable, props)
 export const CreateTimeEditable = (props) => CreateEditable(TimeEditable, props)
 export const CreateDateEditable = (props) => CreateEditable(DateEditable, props)
 export const CreateSelectEditable = (props) => CreateEditable(SelectEditable, props)
+
+
+export const CreateUnmountedDateEditable = (props) => ((comp, props) => {
+    const Ctor = Vue.extend(comp)
+    return new Ctor({
+        propsData: props
+    })
+})(DateEditable, props)

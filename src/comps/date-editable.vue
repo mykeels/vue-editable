@@ -30,7 +30,25 @@
 
     export default {
         name: 'DateEditable',
-        props: ['value', 'format', 'is-edit', 'class-name', 'on-change'],
+        props: {
+            value: {
+                type: String,
+                required: true
+            },
+            format: {
+                type: String,
+                required: true
+            },
+            'is-edit': {
+                type: Boolean
+            },
+            'class-name': {
+                type: String
+            },
+            'on-change': {
+                type: Function
+            }
+        },
         data(){
             return {
                 date: moment(this.value, this.format).format(INPUT_DATE_FORMAT),
@@ -53,6 +71,11 @@
                     /**this.onChange is a function to be passed in as a prop */
                     this.onChange(this.text, this.moment)
                 }
+            }
+        },
+        mounted() {
+            if (!this.format || this.format === '') {
+                throw new Error('[format] prop must contain a date format')
             }
         }
     }
