@@ -110,3 +110,7 @@ Be sure to register the components in your Vue Instance
         })
 </script>
 ```
+
+# Testing
+
+Testing is done with [Jest](https://github.com/facebook/jest). You can run tests with `npm test`
