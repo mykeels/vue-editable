@@ -1,12 +1,12 @@
 <template>
     <div :class="className">
-        <div v-if="isEditMode">
+        <div class="edit-area" v-if="isEditMode">
             <form @submit="toggleEdit">
                 <input type="date" class="float-left" v-model="date" required />
                 <span class="float-right" @click="toggleEdit">&#9989;</span>
             </form>
         </div>
-        <div v-if="!isEditMode" @dblclick="toggleEdit">
+        <div class="text-area" v-if="!isEditMode" @dblclick="toggleEdit">
             {{text}}
         </div>
     </div>

@@ -1,13 +1,13 @@
 <template>
     <div :class="className">
-        <div v-if="isEditMode">
+        <div class="edit-area" v-if="isEditMode">
             <form @submit="toggleEdit">
                 <textarea class="float-left form-control" v-if="multi" v-model="text" required></textarea>
                 <input type="text" class="float-left" v-if="!multi" v-model="text" required />
                 <button class="float-right icon-btn" type="submit">&#9989;</button>
             </form>
         </div>
-        <div v-if="!isEditMode" @dblclick="toggleEdit">
+        <div class="text-area" v-if="!isEditMode" @dblclick="toggleEdit">
             {{text}}
         </div>
     </div>

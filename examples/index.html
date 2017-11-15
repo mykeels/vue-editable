@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Editable Examples</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row" id="app">
+                    <div class="col-sm-12 col-lg-3">
+                        <h3>Text Editable</h3>
+                        <text-editable value="Hello World" class-name="text-editable"></text-editable>
+                    </div>
+                    <div class="col-sm-12 col-lg-3">
+                        <h3>Date Editable</h3>
+                        <date-editable value="2017-01-01" format="YYYY-mm-DD" class-name="date-editable"></date-editable>
+                    </div>
+                    <div class="col-sm-12 col-lg-3">
+                        <h3>Time Editable</h3>
+                        <time-editable value="09:00 AM" class-name="time-editable"></time-editable>
+                    </div>
+                    <div class="col-sm-12 col-lg-3">
+                        <h3>Select Editable</h3>
+                        <select-editable value="Basic 1" :values="classes" class-name="select-editable"></select-editable>
+                    </div>
+                    <div class="col-sm-12 description">
+                        <center>
+                            <p>
+                                Double-click on the components above to toggle between edit-mode and display-mode
+                            </p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+    <script src="../build/vue-editable.js"></script>
+    <script>
+        const App = new Vue({
+            el: '#app',
+            data: {
+                classes: [
+                    "Basic 1",
+                    "Basic 2",
+                    "Basic 3",
+                    "Basic 4",
+                    "Basic 5",
+                    "Basic 6"
+                ]
+            },
+            components: {
+                'text-editable': VueEditable.TextEditable,
+                'date-editable': VueEditable.DateEditable,
+                'select-editable': VueEditable.SelectEditable,
+                'time-editable': VueEditable.TimeEditable
+            },
+            mounted() {
+                console.log("app created")
+            }
+        })
+    </script>
+</body>
+</html>

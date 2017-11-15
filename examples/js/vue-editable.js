@@ -16448,6 +16448,8 @@ if (!!window) {
     window.VueEditable = VueEditable;
 }
 
+console.log(window.VueEditable);
+
 exports.default = VueEditable;
 
 /***/ }),
@@ -16648,7 +16650,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { class: _vm.className }, [
     _vm.isEditMode
-      ? _c("div", { staticClass: "edit-area" }, [
+      ? _c("div", [
           _c("form", { on: { submit: _vm.toggleEdit } }, [
             _vm.multi
               ? _c("textarea", {
@@ -16711,11 +16713,9 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     !_vm.isEditMode
-      ? _c(
-          "div",
-          { staticClass: "text-area", on: { dblclick: _vm.toggleEdit } },
-          [_vm._v("\n        " + _vm._s(_vm.text) + "\n    ")]
-        )
+      ? _c("div", { on: { dblclick: _vm.toggleEdit } }, [
+          _vm._v("\n        " + _vm._s(_vm.text) + "\n    ")
+        ])
       : _vm._e()
   ])
 }
@@ -17220,7 +17220,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { class: _vm.className }, [
     _vm.isEditMode
-      ? _c("div", { staticClass: "edit-area" }, [
+      ? _c("div", [
           _c("form", { on: { submit: _vm.toggleEdit } }, [
             _c("input", {
               directives: [
@@ -17254,11 +17254,9 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     !_vm.isEditMode
-      ? _c(
-          "div",
-          { staticClass: "text-area", on: { dblclick: _vm.toggleEdit } },
-          [_vm._v("\n        " + _vm._s(_vm.text) + "\n    ")]
-        )
+      ? _c("div", { on: { dblclick: _vm.toggleEdit } }, [
+          _vm._v("\n        " + _vm._s(_vm.text) + "\n    ")
+        ])
       : _vm._e()
   ])
 }
@@ -17455,7 +17453,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { class: _vm.className }, [
     _vm.isEditMode
-      ? _c("div", { staticClass: "edit-area" }, [
+      ? _c("div", [
           _c("form", { on: { submit: _vm.toggleEdit } }, [
             _c(
               "select",
@@ -17517,11 +17515,9 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     !_vm.isEditMode
-      ? _c(
-          "div",
-          { staticClass: "text-area", on: { dblclick: _vm.toggleEdit } },
-          [_vm._v("\n        " + _vm._s(_vm.text) + "\n    ")]
-        )
+      ? _c("div", { on: { dblclick: _vm.toggleEdit } }, [
+          _vm._v("\n        " + _vm._s(_vm.text) + "\n    ")
+        ])
       : _vm._e()
   ])
 }
@@ -17714,7 +17710,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { class: _vm.className }, [
     _vm.isEditMode
-      ? _c("div", { staticClass: "edit-area" }, [
+      ? _c("div", [
           _c("form", { on: { submit: _vm.toggleEdit } }, [
             _c("input", {
               directives: [
@@ -17748,11 +17744,9 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     !_vm.isEditMode
-      ? _c(
-          "div",
-          { staticClass: "text-area", on: { dblclick: _vm.toggleEdit } },
-          [_vm._v("\n        " + _vm._s(_vm.text) + "\n    ")]
-        )
+      ? _c("div", { on: { dblclick: _vm.toggleEdit } }, [
+          _vm._v("\n        " + _vm._s(_vm.text) + "\n    ")
+        ])
       : _vm._e()
   ])
 }

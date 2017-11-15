@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
     "prod": "WEBPACK_ENV=production webpack",
-    "test": "jest --verbose --watch"
+    "test": "jest --verbose --watch",
+    "gh-pages": "WEBPACK_ENV=gh-pages webpack --progress --colors"
   },
   "jest": {
     "verbose": true,
@@ -37,6 +38,7 @@
   },
   "homepage": "https://github.com/mykeels/vue-editable#readme",
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "moment": "^2.19.2",
     "vue": "^2.5.3"
   },

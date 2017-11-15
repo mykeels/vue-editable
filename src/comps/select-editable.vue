@@ -1,6 +1,6 @@
 <template>
     <div :class="className">
-        <div v-if="isEditMode">
+        <div class="edit-area" v-if="isEditMode">
             <form @submit="toggleEdit">
                 <select v-model="text" class="float-left">
                     <option v-if="v.constructor.name === 'String'" v-for="(v, index) in values" :key="index" :value="v">{{v}}</option>
@@ -9,7 +9,7 @@
                 <span class="float-right" @click="toggleEdit">&#9989;</span>
             </form>
         </div>
-        <div v-if="!isEditMode" @dblclick="toggleEdit">
+        <div class="text-area" v-if="!isEditMode" @dblclick="toggleEdit">
             {{text}}
         </div>
     </div>
